@@ -1,0 +1,153 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: #1}\hfill \textbf{UIN: #2}}
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to prepare this homework. \\[2ex]
+ \textbf{Electronic signature:} \underline{ \textbf{Blake Lun} } }
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$] 
+\item Did you type in your name and UIN? 
+\item Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted.)
+\item Did you sign that you followed the Aggie Honor Code? 
+\item Did you solve all problems? 
+\item Did you submit the .tex and .pdf files of your homework to the correct link on Canvas? 
+\end{compactitem}
+}
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw5.tex} and 
+    \textsl{yourLastName-yourFirstName-hw5.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing or unreadable, you will receive zero points for this
+    homework.}\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+
+\begin{document}
+\vspace*{-20mm}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2021\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{5}
+\duedate{Monday, 10/11/2021 11:59 p.m.}
+\name{ Blake Lun }{ 131001178 }
+\begin{resources} (All people, books, articles, web pages, etc.\ that
+  have been consulted when producing your answers to this homework)
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total 100 points.
+
+\bigskip
+
+\noindent
+The problems are from the lecture notes posted on Perusall.
+
+\medskip
+
+\noindent
+Always carefully explain your answers in your own words!
+
+\medskip
+
+\begin{problem} ($15+10=25$ points) Section 6.1, Exercise 6.2 (a) and (b).
+[\textbf{Requirements:} For (a), you need to show carefully that the relation satisfies the
+three properties, reflexivity, antisymmetry, and transitivity.  For (b), you need to
+give a general condition for two elements $(a_1, a_2)$ and $(b_1, b_2)$ to be
+incomparable, not some examples.]
+\end{problem}
+\begin{solution} 
+The set is reflexive since every element is related to itself. There is a (1,1), (2,2), (3,3) ... (m,n) and there is only one of each of these. \\
+
+\end{solution}
+
+\begin{problem} (15 points) Determine the cover relation of the set of positive integers
+from 1 to 10 ordered by divisibility $(\{1, \ldots, 10\},\, | \, )$.
+
+\smallskip
+\noindent
+[Hint: Study Examples 6.13 and 6.17 in the lecture notes posted on Perusall.
+The general definition of divisibility can be found in the first paragraph of page 63 
+in Section 2.9 and in the problem statement of Exercise 6.1 on page 155.]
+
+\smallskip
+\noindent
+[Notes/Rubrics: Cover relation is a relation, which is a set of ordered pairs, thus the 
+ordered pairs must be enclosed in a set \{\,\} notation. If the set notation is missing, then 
+points will be taken off. Each missing or superfluous ordered pair will also get points taken off.]
+\end{problem}
+\begin{solution} 
+cover relation = \{(1, 2), (2, 4), (2, 6), (4, 8), (1, 3), (3, 6), (3, 9), (1, 5), (2, 10), (5, 10), (1, 7)\}
+\end{solution}
+
+\begin{problem} (30 points) Section 3.8, Exercise 3.60.
+[Grading rubric: Giving a correct, concrete bijective function is worth ten points, and showing
+that your function is injective and surjective worth ten points each.]
+\end{problem}
+\begin{solution} 
+Two functions have the same cardinality if there is a bijective function from one set to the other. \\
+Let f : $\N \in \Z$ \\
+----------\{ x/2 when x is even\\
+f(x) = \{ 0 when x = 0 \\
+----------\{ -(x + 1) / 2 when x is odd \\
+This function is both injective and surjective making it bijective. It is surjective because every integer is mapped to. If x is odd, the x is mapped to a negative number. If x is 1, f(x) is -1. If x is 3, f(x) is -2. If you continue this pattern all negative numbers have an x. If x is even, the x is mapped to a positive number. If x is 2, f(x) is 1. If x is 4, f(x) is 2. If you continue this pattern all positive numbers also have an x. Which leads us to the conclusion every Z has some A making this surjective. This function is also injective since every integer has a unique mapping. If we look at the pattern from the surjective example, when x is even, if x is 2, f(x) is 1. If x is 4, f(x) is 2. If x is 6, f(x) is 3. We can clearly see that we are incrementing through every even number of x and every positive integer has a unique mapping from x. The same can be said for when x is odd. If x is 1, f(x) is -1. If x is 3, f(x) is -2. If x is 5, f(x) is -3. Again, we are incrementing through all the odd values of x and every negative integer has a unique mapping of x. This allows us to come to the conclusion that the function is one-to-one, or every Z doesn't have many A's making it injective. Since we proved it is both injective and surjective, by default we can come to the conclusion that the function is bijective.
+\end{solution}
+
+\begin{problem} (5 points $\times$ 2 = 10 points) Section 7.1, Exercise 7.1 (a) and (d).
+[\textbf{Requirements:} For (a), express your final answer in a format involving some power of 2.] 
+\end{problem}
+\begin{solution} 
+a. ceiling: $ \lceil (2^3^2 - 1) / 8 \rceil \\
+= \lceil (536870911.9) \rceil \\
+= 536870912 \\
+= 2^3^2 \\$
+\\
+floor: $\lfloor (2^3^2 - 1) / 8 \rfloor \\
+= \lfloor (536870911.9) \rfloor \\
+= 536870911 \\
+= 2^3^2 - 1$ \\
+\\
+d. ceiling: $ \lceil \pi ^\pi \rceil \\
+= \lceil (36.4621596072) \rceil \\
+= 37$ \\
+\\
+floor: $\lfloor \pi ^\pi \rfloor \\
+= \lfloor (36.4621596072) \rfloor \\
+= 36$ \\
+\end{solution}
+
+\begin{problem} ($10+10=20$ points) Section 7.1, Exercise 7.2.
+[\textbf{Requirements:} Use the definitions of $\lfloor \, \rfloor$ and $\lceil \, \rceil$ involving 
+the inequalities, and carefully explain your algebraic reasoning. Using just some examples 
+will hardly get you any points.]
+\end{problem}
+\begin{solution}
+a. The floor function $\lfloor x \rfloor$ rounds the real number x down to the greatest integer that is smaller or equal to x. From that statement, we can get the right side of the inequality n $\leqslant$ x. It is an $\leqslant$ sign rather than a $<$ because if x is already an integer, then n would be equal to x. For example, if $n = \lfloor x \rfloor$ and $x = 3$, we have $\lfloor 3 \rfloor$ which is just $n = 3$. Since n is an integer, we need to cover an integers worth of a range of number on both sides of the inequality to cover all possible numbers. This gives us the left side of the inequality $x - 1 < n$. This time, the sign is $<$ rather than $\leqslant$ because we don't want to include the number an integer distance from x. We would be including a possible integer that should not be included in the range. For example, if $n = \lfloor x \rfloor$ and $x = 3$, we have $\lfloor 3 \rfloor$. Hypothetically, if the inequality was $x - 1 \leqslant n$ rather than $x - 1 < n$, we would be including the integer 2 in the range of possibilities. \\
+\\
+b. The ceiling function $\lceil x \rceil$ rounds the real number x up to the smallest integer that is greater or equal to x. From that statement, we can get the left side of the inequality x $\leqslant$ n. It is an $\leqslant$ sign rather than a $<$ because if x is already an integer, then n would be equal to x. For example, if $n = \lceil x \rceil$ and $x = 3$, we have $\lceil 3 \rceil$ which is just $n = 3$. Since n is an integer, we need to cover an integers worth of a range of number on both sides of the inequality to cover all possible numbers. This gives us the right side of the inequality $n < x + 1$. This time, the sign is $<$ rather than $\leqslant$ because we don't want to include the number an integer distance from x. We would be including a possible integer that should not be included in the range. For example, if $n = \lceil x \rceil$ and $x = 3$, we have $\lceil 3 \rceil$. Hypothetically, if the inequality was $n \leqslant x + 1$ rather than $n < x + 1$, we would be including the integer 4 in the range of possibilities. \\
+\end{solution}
+
+\goodbreak
+\checklist
+\end{document}

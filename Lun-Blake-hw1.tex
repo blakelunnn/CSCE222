@@ -1,0 +1,223 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: Blake Lun}\hfill \textbf{UIN: 131001178}}
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to prepare this homework. \\[2ex]
+ \textbf{Electronic signature:} \underline{ \textbf{Blake Lun} } }
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$] 
+\item Did you type in your name and UIN? 
+\item Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted.)
+\item Did you sign that you followed the Aggie Honor Code? 
+\item Did you solve all problems? 
+\item Did you submit the .tex and .pdf files of your homework to the correct link on Canvas? 
+\end{compactitem}
+}
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw1.tex} and 
+    \textsl{yourLastName-yourFirstName-hw1.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing, you will receive zero points for this homework.}\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+
+\begin{document}
+\vspace*{-20mm}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2021\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{1}
+\duedate{Friday, 9/10/2021 11:59 p.m.}
+\name{ (type your name here) }{ (type your UIN here) }
+\begin{resources} (All people, books, articles, web pages, etc.\ that
+  have been consulted when producing your answers to this homework)
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total 105 points.
+
+\bigskip
+
+\noindent
+\textbf{The problems are from the lecture notes posted on Perusall.}
+
+\medskip
+
+\begin{problem} (Two different tours $\times$ 5 points each = 10 points) Section 1.1, Exercise 1.1.
+[For this problem, write your solutions in the form of a list of alphanumeric symbols, 
+using the common convention of expressing the columns and rows of
+a chessboard as a, b, and c, and 1, 2, and 3, respectively. For example, 
+the tour in Figure~1.2 in the text can be written as 
+[a2, c1, d3, b2, d1, c3, b1, a3, c2, a1, b3, d2].  
+(Your answers should be different from this one!)]
+\end{problem}
+\begin{solution}
+First Tour: [a3, c2, a1, b3, d2, b1, c3, a2, c1, d3, b2, d1]
+
+Second Tour: [a2, c1, d3, b2, d1, c3, b1, a3, c2, a1, b3, d2]
+\end{solution}
+
+\begin{problem} ($5+10=15$ points) Section 1.1, Exercise 1.3.
+\end{problem}
+\begin{solution}
+Part a. There cannot exist a knight's tour on a 3x3 chessboard because the middle square cannot be visited/accessed from any other square on the board. The knight has to move two spaces forward and then one space perpendicular to the previous move.
+
+Part b.
+\begin{tabular}{ | c | c | c | } 
+  \hline
+  a3 & b3 & c3 \\ 
+  \hline
+  a2 & b2 & c2 \\ 
+  \hline
+  a1 & b1 & c1 \\ 
+  \hline
+\end{tabular}
+\\
+It is impossible for the knight to reach the middle square or b2 in this example. For example, if we were to begin at the square a1, the only possible moves would be b3 and c2 since the knight must move two spaces and then one more perpendicular to the previous. Starting from a2, you can only reach c3 and c1. Starting from a3, you can only reach b1 or c2. This overs all the unique starting locations. The other starting locations would be the same just rotated around.
+
+\end{solution}
+
+\begin{problem} (Five subproblems $\times$ 3 points each = 15 points) Section 2.1, Exercise 2.1
+\end{problem}
+\begin{solution}
+Part a. This is a mathematical statement. Mathematical statements are sentences that are either true or false. This statement can be proven to be false. For example, .1 repeating will be $<$ pi.
+
+Part b. This is also a mathematical statement. An irrational number is a number that has no definite decimal ending. Pi goes on forever making it irrational, which therefore, makes this a mathematical statement since it can be proven to be true.
+
+Part c. This is a mathematical statement. When using the quadratic formula to find the solutions to the equation, we get a result of 2 ± (root)2. The two solutions to the quadratic equation come out to be decimals which are not integers thereby proving the statement to be true which makes it a mathematical statement.
+
+Part d. This is a mathematical statement. 123 - 100 $>$ 23 can be simplified to 23 $>$ 23. This is a false statement since 23 cannot be greater than 23. By being able to prove that the statement is false, that makes the statement a mathematical statement.
+
+Part e. This is not a mathematical statement. x is not given a numerical value; therefore, there is no way to prove that x is a prime number.
+\end{solution}
+
+\begin{problem} (10 points) Section 2.2, Exercise 2.3
+\end{problem}
+\begin{solution}
+Peter's question is useless because while the knights will always tell the truth and say that they are not a knave, the knaves invariably lie. If Peter asks a knave the same question, they may either tell the truth and say yes or tell a lie and say no. This way Peter will never know if who he is asking is a knight or knave by simply asking everyone he meets "Are you a knave?"
+\end{solution}
+
+\begin{problem} (15 points) Section 2.2, Exercise 2.4.
+Use a truth table to show your reasoning. 
+\end{problem}
+\begin{solution}
+A states that they are a knave and B is not a knave. If A is a knight, then that would mean the statement A said is true. This can give us the logical expression $A \iff \lnot A \land B$ since these are equivalent statements. If it is true that A is a knight, that must make the statement they said true. This same equation can be used in the case that A is knave simply by negating the whole expression to be $\lnot (A \iff \lnot A \land B)$. We need to find when the expression $A \iff \lnot A \land B$ is true. According to the truth table below, that proves to be true when both A and B are false. This means that the expression $A \iff \lnot A \land B$ is true only if A and B are false, or A and B are knaves. Therefore, both A and B are knaves.
+\\
+\begin{tabular}{  c | c | c | c }
+  $A B & \lnot A & \lnot A \land B & A \iff \lnot A \land B$ \\ 
+  \hline
+  F F & T & F & T \\ 
+  \hline
+  F T & T & T & F \\
+  \hline
+  T F & F & F & F \\
+  \hline
+  T T & F & F & F \\
+\end{tabular}
+\end{solution}
+
+\begin{problem} (10 points) Section 2.3, Exercise 2.10
+\end{problem}
+\begin{solution}
+Below are what the tables would be for $A \to B$ and $B \to A$. In the first table where we look at $A \to B$, the only time $A \to B$ is false is when A is true and B is false. This is because if the hypothesis of an implication is false, the statement will be true. This is because if the hypothesis is false, it is true that we are not able to make the conclusion that A affects B which is a true statement. In the case of the left side of an implication being false, the value of the right side is obsolete since we are mainly focusing on the structure of the conditional statement rather than the actual content of the words. And when both A and B are both true statements then that is simply a true statement no questions asked. So to reiterate, the only time an implication reaches a conclusion of false is when the left side is true and the right side is false. Looking back at the tables, in the first table, the only time the implication is false is when A is true and B is false. In the second table, the only time the implication is false is when B is true and A is false. This proves that $A \to B$ and $B \to A$ are not logically equivalent since the "conditions" to make the two different implications false are not the same.\\
+\begin{tabular}{  c | c  }
+  $A B & A \to B$ \\ 
+  \hline
+  F F & T \\ 
+  \hline
+  F T & T \\
+  \hline
+  T F & F \\
+  \hline
+  T T & T \\
+\end{tabular}
+\begin{tabular}{  c | c  }
+  $B A & B \to A$ \\ 
+  \hline
+  F F & T \\ 
+  \hline
+  F T & T \\
+  \hline
+  T F & F \\
+  \hline
+  T T & T \\
+\end{tabular}
+\end{solution}
+
+\begin{problem} (10 points) Section 2.3, Exercise 2.11.
+Use a truth table.
+\end{problem}
+\begin{solution} 
+\begin{tabular}{  c | c | c | c }
+  $A B & A \to B & B \to A & (A \to B) \land (B \to A)$\\ 
+  \hline
+  F F & T & T & T\\ 
+  \hline
+  F T & T & F & F\\
+  \hline
+  T F & F & T & F\\
+  \hline
+  T T & T & T & T\\
+\end{tabular}
+\\
+According to the table above, $(A \to B) \land (B \to A)$ only proves to be true when both A and B share the same value such as both true or both false. \\
+\begin{tabular}{  c | c  }
+  $A B & A \iff B$ \\ 
+  \hline
+  F F & T \\ 
+  \hline
+  F T & F \\
+  \hline
+  T F & F \\
+  \hline
+  T T & T \\
+\end{tabular}
+\\
+Now if we look at the table that represents $A \iff B$, we see that it is also only true when both A and B share the same boolean value. This is enough to prove that $(A \to B) \land (B \to A)$ is logically equivalent to $A \iff B$. Both have the same results with the same inputs. They are both true if and only if A and B share the same boolean value.
+\end{solution}
+
+\begin{problem} (20 points) Section 2.3, Exercise 2.12.
+Your answer should consist of a series of logical equivalences 
+you learned in the text and the final step must resolve to $T$.
+Do not use a truth table.  Study the proofs of Proposition 2.7 (b) and (c) 
+for the expected style of your answer.
+\end{problem}
+\begin{solution} 
+$(A \land (A \to B)) \to B$ \\
+= $(A \land (\lnot A \lor B)) \to B$ by $A \to B$ = $\lnot A \lor B$ \\
+= $((A \land \lnot A) \lor (A \land B) \to B$ by distributive law \\
+= $(F \lor (A \land B)) \to B$ since $\lnot A \land A$ is always false \\
+= $(A \land B) \to B$ since $F \lor (A \land B)$ = $(A \land B)$ \\
+= $\lnot(A \land B) \lor B$ by $A \to B$ = $\lnot A \lor B$ \\
+= $\lnot A \lor \lnot B \lor B$ by de Morgan's law \\
+= $\lnot A \lor (\lnot B\lor B)$ by associative law of $\lor$ \\
+= $\lnot A \lor T$ by $(\lnot B\lor B) = T$ \\
+= T since $\lnot A \lor T$ is always true
+
+\end{solution}
+
+\goodbreak
+\checklist
+\end{document}

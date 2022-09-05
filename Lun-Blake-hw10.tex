@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: #1}\hfill \textbf{UIN: #2}}
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to prepare this homework. \\[2ex]
+ \textbf{Electronic signature:} \underline{ \textbf{Blake Lun} } }
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$] 
+\item Did you type in your name and UIN? 
+\item Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted.)
+\item Did you sign that you followed the Aggie Honor Code? 
+\item Did you solve all problems? 
+\item Did you submit the .tex and .pdf files of your homework to the correct link on Canvas? 
+\end{compactitem}
+}
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw10.tex} and 
+    \textsl{yourLastName-yourFirstName-hw10.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing or unreadable, you will receive zero points for this
+    homework.}\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+
+\begin{document}
+\vspace*{-20mm}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2021\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{10}
+\duedate{Monday, 12/6/2021 11:59 p.m.}
+\name{ Blake Lun }{ 131001178 }
+\begin{resources} (All people, books, articles, web pages, etc.\ that
+  have been consulted when producing your answers to this homework)
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total 100 points.
+
+\medskip
+
+\noindent
+The problems are from the lecture notes posted on Perusall.
+\textbf{Explain} everything carefully \textit{in your own words}!
+
+\medskip
+
+\begin{problem} (20 points) Section 13.1, Exercise 13.4.
+Explain your reasoning carefully, including (but not limited to) 
+why you set up your generating function in the way you do.
+\end{problem}
+\begin{solution} 
+If Albert has 8, Bella and Clara split the other 12 but only in the pairs (3, 9), (5, 7), (7, 5), (9, 3) since they have to carry an odd number. If Albert has 10, they split (3, 7), (5, 5), (7, 3). If Albert has 12, they split (3, 5), (5, 3). If Albert has 14, they split (3, 3). 10 different ways to distribute.
+\end{solution}
+
+\begin{problem} (10 points) Section 13.2, Exercise 13.7.  Explain.
+\end{problem}
+\begin{solution} 
+The sequence (1, 0, 1, 0, 1, 0, ...) gives us $1 + 0x + x^2 + 0x^3 + ...$\\
+Taking out all the terms with constant 0, we're left with all even exponents $1 + x^2 + x^4 + ...$\\
+This gives us the generating function $\frac{1}{1 - x^2}$
+\end{solution}
+
+\begin{problem} (25 points) Section 14.2, Exercise 14.10.  For (a), study carefully 
+how the example in Section 14.2 is solved using generating functions, and solve 
+this part of the problem in a similar way.  For (b), do the partial fraction decomposition 
+of H(z) and expand it into a sum of two power series and then combine them into 
+a power series to find the coefficient for the $z^k$ power term (like we did for the 
+Fibonacci recurrence in class).  Explain your steps carefully.
+\end{problem}
+\begin{solution} 
+a. The ordinary generating function is $H(z) = \sum_{k=0}^{\infty} h_kz^k$. We can rewrite this for our problem to $H(z) = h_0 +  \sum_{k=1}^{\infty} (2h_{k - 1} + 1)z^k$. \\
+\\
+Keeping in mind that $h_0 = 1$, the distributive law yields \\
+$H(z) = 1 + \sum_{k=1}^{\infty} 2h_{k - 1}z^k + \sum_{k=1}^{\infty} z^k$ \\
+\\
+For the first summation $\sum_{k=1}^{\infty} 2h_{k - 1}z^k$, we can take the constant out first to have $2\sum_{k=1}^{\infty} h_{k - 1}z^k$. Then we can see the summation is a shifted version of H(z) meaning, $2\sum_{k=1}^{\infty} h_{k - 1}z^k$ = $2\sum_{k=0}^{\infty} h_kz^{k + 1} = 2zH(z)$.\\
+\\
+The second summation is our basic generating function $\sum_{k=1}^{\infty} z^k$ which changes to $\sum_{k=0}^{\infty} z^{k + 1}$. This simplifies to $A(z) - 1$ which is also equal to $\frac{1}{1 - z} - 1$.\\
+\\
+Substituting these into the original equation gives us\\
+$H(z) = 1 + 2zH(z) + \frac{1}{1 - z} - 1$ \\
+The ones cancel out and moving the H(z) to the same side gives us \\
+$H(z) - 2zH(z)= \frac{1}{1 - z}$ \\
+$H(z)(1 - 2z)= \frac{1}{1 - z}$ \\
+\\
+Isolating H(z) gives us\\
+$H(z) = \frac{1}{1 - z} * \frac{1}{1 - 2z}$\\
+\\
+Multiplying this out gives us \\
+$H(z) = \frac{1}{2z^2 - 3z + 1}$ which is our generating function \\
+\\
+b. The partial fraction decomposition of $H(z) = \frac{1}{2z^2 - 3z + 1}$ comes out to be $\frac{2}{1 - 2z} - \frac{1}{1 - z}$. These can be written in summation form to be \\
+$\sum_{k=0}^{\infty} 2^{k + 1}z^{k} - \sum_{k=0}^{\infty} z^{k}$ \\
+Looking at the coefficients, we have the closed form $2^{k + 1} - 1$
+\end{solution}
+
+\begin{problem} (15 points) Section 14.7, Exercise 14.30.  Study Example 14.14
+in Section 14.7, and solve this exercise problem in a very similar way.  Explain in
+a similar way as in Example 14.14.
+\end{problem}
+\begin{solution} 
+The characteristic function is $n^2 - 7n + 12 = 0$. This gives us the roots 3 and 4. By Corollary 14.13, the closed form for the coefficients $g_n$ must be of the form $g_n = C_13^n + C_24^n$ for some complex numbers $C_1$ and $C_2$. We find the value of the constants using the initial conditions \\
+\\
+$g_0 = 2 = C_1 + C_2$ \\
+$g_1 = 1 = C_13 + C_24$ \\
+\\
+Solving these equations gives $C_1 = 7$ and $C_2 = -5$. Therefore we can conclude that \\
+\\
+$g_n = 7*3^n - 5*4^n$
+\end{solution}
+
+\begin{problem} (15 points) Section 17.2, Exercise 17.6.
+\end{problem}
+\begin{solution} 
+$S \to (n - 1) O^{n - 1} S O^{n - 1}$ \\
+$S \to O^{n - 1} (OAO) O^{n - 1}$ by the second production rule \\
+$S \to O^n A O^n$ \\
+repeatedly apply the third production rule $A \to 1A$ (n - 1) times \\
+$S \to O^n (1A)^{n - 1} O^n$ \\
+$S \to O^n 1^{n - 1} 1 O^n$ apply fourth production rule (terminate) \\
+$S \to O^n 1^m O^n; m, n \geqslant 0$ \\
+\\
+The language generated by G is given by \\
+$L(G) = \{ 0^n1^m0^n | m, n \geqslant 0 \}$
+\end{solution}
+
+\begin{problem} (15 points) Section 17.2, Exercise 17.8.
+\end{problem}
+\begin{solution} 
+Let G = (N, T, P, S) be a grammar with $T = \{0, 1\}, N = {S}$ \\
+$P = \{S \to OS1, S \to null\}$
+\end{solution}
+
+\goodbreak
+\checklist
+\end{document}

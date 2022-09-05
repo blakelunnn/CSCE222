@@ -1,0 +1,201 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: #1}\hfill \textbf{UIN: #2}}
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to prepare this homework. \\[2ex]
+ \textbf{Electronic signature:} \underline{ \textbf{Blake Lun} } }
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$] 
+\item Did you type in your name and UIN? 
+\item Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted.)
+\item Did you sign that you followed the Aggie Honor Code? 
+\item Did you solve all problems? 
+\item Did you submit the .tex and .pdf files of your homework to the correct link on Canvas? 
+\end{compactitem}
+}
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw7.tex} and 
+    \textsl{yourLastName-yourFirstName-hw7.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing or unreadable, you will receive zero points for this
+    homework.}\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+
+\begin{document}
+\vspace*{-20mm}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2021\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{7}
+\duedate{Thursday, 10/28/2021 11:59 p.m.}
+\name{ Blake Lun }{ 131001178 }
+\begin{resources} (All people, books, articles, web pages, etc.\ that
+  have been consulted when producing your answers to this homework)
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total 100 points.
+
+\bigskip
+
+\noindent
+The problems are from the lecture notes posted on Perusall.
+
+\medskip
+
+\noindent
+For each proof-by-induction (or strong induction) questions, strictly adhere 
+to the format and the style we discussed in class.  Especially in the inductive step, 
+carefully explain each step-by-step in your own words!  \textit{You will not receive 
+full credit if you don't explain the steps.}
+
+Grading rubrics for each (strong) induction proof are as follows: 20\% for the induction base
+(clearly stating the base case and showing that the base case holds), 70\% for the
+inductive step (correctly stating the induction hypothesis, clearly stating where
+and how the induction hypothesis is used in the rest of the inductive step, clearly
+and completely showing the derivation steps in the inductive step), and 10\% for the 
+concluding remark of your proof. 
+
+\medskip
+
+\begin{problem} (20 points) Section 4.2, Exercise 4.12
+\end{problem}
+\begin{solution} 
+Let P(n) be the inequality \[ \prod_{k=1}^{n} (1 + x_k) \geqslant 1 + \sum_{k=1}^{n} x_k\] where every $x_k \geqslant -1$ and all have the same sign.\\
+Base Case: \\
+P(n) holds for n = 1 since: \\
+$1 + x_1 \geqslant 1 + x_1$ \\
+\\
+Induction Step: \\
+Induction Hypothesis: Assume P(n) is true. Show that P(n) implies P(n + 1). \\
+P(n + 1): \[ \prod_{k=1}^{n + 1} (1 + x_k) \geqslant 1 + \sum_{k=1}^{n + 1} x_k\] \\
+Looking at just the left hand side: \[ \prod_{k=1}^{n + 1} (1 + x_k) = (1 + x_n_+_1)(\prod_{k=1}^{n} 1 + x_k)\]
+We can then claim: \[(1 + x_n_+_1)(\prod_{k=1}^{n} 1 + x_k) \geqslant (1 + x_n_+_1)(1 + \sum_{k=1}^{n} x_k)\] by the induction hypothesis. \\
+Foiling the right side out gives us: \[1 + \sum_{k=1}^{n} x_k + x_n_+_1 + (x_n_+_1)(\sum_{k=1}^{n} x_k)\] Now we combine the first two terms and relate it back to the right side of the original inequality to get:
+\[1 + \sum_{k=1}^{n + 1} x_k + (x_n_+_1)(\sum_{k=1}^{n} x_k) \geqslant 1 + \sum_{k=1}^{n + 1} x_k\]
+Looking at the inequality, we can see that $1 + \sum_{k=1}^{n + 1} x_k$ is present on both sides. Therefore, in order to prove the inequality to be true, we just need to prove that $(x_n_+_1)(\sum_{k=1}^{n} x_k) \geqslant 0$. \\
+One of the definitions given at the start is every $x_k$ will have the same signs. Therefore, if $(x_n_+_1)$ is negative, $(\sum_{k=1}^{n} x_k)$ will also be negative making their product greater than or equal to 0. If $(x_n_+_1)$ is positive, $(\sum_{k=1}^{n} x_k)$ will also be positive, again, making their product greater than or equal to 0. Therefore, P(n + 1) holds. \\
+\\
+Therefore, we can conclude by induction that P(n) holds for all $n \geqslant 1$ which proves the claim.
+\end{solution}
+
+\begin{problem} (20 points) Section 4.6, Exercise 4.30
+\end{problem}
+\begin{solution} 
+Let P(n) be $g(n) \leqslant 2^n$ where $g(n) = g_n_-_1 + g_n_-_2 + g_n_-_3$ for all integers $n \geqslant 3$ and $g(0) = 1$, $g(1) = 2$, and $g(2) = 3$. \\
+\\
+Base Case: \\
+P(n) holds for n = 0, 1, 2 since: \\
+$P(0) = g(0) \leqslant 2^0$ \\
+$1 \leqslant 1$ \\
+\\
+$P(1) = g(1) \leqslant 2^1$ \\
+$2 \leqslant 2$ \\
+\\
+$P(2) = g(2) \leqslant 2^2$ \\
+$3 \leqslant 4$ \\
+\\
+Inductive Step: \\
+Inductive Hypothesis: P(k) holds for $0 \leqslant k \leqslant n$ where $n \geqslant 3$. Prove P(n) implies P(n + 1) \\
+P(n + 1): $g_n_+_1 \leqslant 2^n^+^1$ \\
+$g_n_+_1 = g_n + g_n_-_1 + g_n_-_2$ \\
+$g_n_+_1 = 2^n + 2^{n - 1} + 2^{n - 2}$ by induction hypothesis. \\
+$\to 2^n + 2^{n - 1} + 2^{n - 2} \leqslant 2^{n + 1}$
+\end{solution}
+
+\begin{problem} (20 points) Section 11.1, Exercise 11.3
+\end{problem}
+\begin{solution} 
+$\lim_{x\to\infty} \frac{f(n)}{g(n)}$ \\
+$\to \lim_{x\to\infty} \frac{n^2 + 2n}{n^2}$ divide by n \\
+$\to \lim_{x\to\infty} \frac{n + 2}{n}$ separate into two terms \\
+$\to \lim_{x\to\infty} \frac{n}{n} + \frac{2}{n}$ separate into two limits \\
+$\to \lim_{x\to\infty} \frac{n}{n}$ + $\lim_{x\to\infty} \frac{2}{n}$ solve both limits \\
+$\to \lim_{x\to\infty} \frac{n}{n}$ $ = 1$ + $\lim_{x\to\infty} \frac{2}{n}$ $ = 0$ \\
+$\to 1 + 0 = 1$ \\
+Since $\lim_{x\to\infty} \frac{f(n)}{g(n)}$ $ = 1$, $f(n) \sim g(n)$ \\
+Therefore, Ernie is right.
+\end{solution}
+
+\begin{problem} ($10 \text{ points } \times 2 = 20$ points) Section 11.2, Exercise 11.9 (a) and (b).
+\end{problem}
+\begin{solution} 
+a. $f(n) = (-1)^n$ \\
+when n is odd: $f(n) = (-1)^n = -1$ \\
+when n is even: $f(2n) = (-1)^{2n} = ((-1)^2)^n = 1^n = 1$ \\
+lower accumulation point: -1 \\
+upper accumulation point: 1 \\
+\\
+b. $f(n) = 4 + (-1)^n \frac{n}{n + 10}$ \\
+when n is odd: \\
+$\lim_{n\to\infty} f(n) = 4 + (-1)^n \frac{n}{n + 10}$ apply L'Hopital's rule; $\frac{n}{n + 10}$ becomes $\frac{1}{1}$ which equals 1 \\
+$\to \lim_{n\to\infty} f(n) = 4 + (-1)^n$ since n is odd, $(-1)^n = -1$ \\
+$\to \lim_{n\to\infty} f(n) = 4 + (-1)$ \\
+$\to \lim_{n\to\infty} f(n) = 3$ \\
+\\
+when n is even: \\
+$\lim_{n\to\infty} f(n) = 4 + (-1)^n \frac{n}{n + 10}$ apply L'Hopital's rule; $\frac{n}{n + 10}$ becomes $\frac{1}{1}$ which equals 1 \\
+$\to \lim_{n\to\infty} f(n) = 4 + (-1)^n$ since n is even, $(-1)^n = 1$ \\
+$\to \lim_{n\to\infty} f(n) = 4 + 1$ \\
+$\to \lim_{n\to\infty} f(n) = 5$ \\
+\\
+
+\end{solution}
+
+\begin{problem} ($10 \text{ points } \times 2 = 20$ points) Section 11.3, Exercise 11.14 (ii) and (iii).
+[Requirement: Use the definition of $\asymp$ involving the inequalities.]
+\end{problem}
+\begin{solution} 
+ii. $f \asymp g \iff g \asymp f$ \\
+\\
+iii. $(f \asymp g) \sim (g \asymp h) \to (f \asymp h)$ \\
+where $(f \asymp g)$ is n1, $(g \asymp h)$ is n2, $(f \asymp h)$ is n0 \\
+\\
+$= (c1 \vert g \vert \leqslant \vert f \vert \leqslant c2 \vert g \vert) \sim (c3 \vert h \vert \leqslant \vert g \vert \leqslant c4 \vert h \vert) \to (c5 \vert h \vert \leqslant \vert f \vert \leqslant c6 \vert h \vert)$ \\
+Divide the inequalities into their own segments \\
+$c1\vert g \vert \leqslant \vert f \vert \\
+\vert f \vert \leqslant c2 \vert g \vert \\
+c3 \vert h \vert \leqslant \vert g \vert \\
+\vert g \vert \leqslant c4 \vert h \vert \\$
+Using these above inequalities, we will prove \\
+$c5 \vert h \vert \leqslant \vert f \vert \\
+\vert f \vert \leqslant c6 \vert h \vert \\$ and find n0 \\
+\\
+To prove $c5 \vert h \vert \leqslant \vert f \vert$, multiply $c3 \vert h \vert \leqslant \vert g \vert$ by c1 to get $c1c3 \vert h \vert \leqslant c1\vert g \vert$ \\
+c1c3, the product of these two arbitrary numbers is another arbitrary number. Therefore, we can say c1c3 = c5. Substitute this into the inequality and it gives us $c5 \vert h \vert \leqslant c1\vert g \vert$. Using the other segmented inequality of $c1\vert g \vert \leqslant \vert f \vert$, we have $c5 \vert h \vert \leqslant c1\vert g \vert \leqslant \vert f \vert$. From this, we can transitively say $c5 \vert h \vert \leqslant \vert f \vert$. \\
+\\
+To prove $\vert f \vert \leqslant c6 \vert h \vert$, multiply $\vert g \vert \leqslant c4 \vert h \vert$ by c2 to get $c2 \vert g \vert \leqslant c2c4\vert h \vert$ \\
+c2c4, the product of these two arbitrary numbers is another arbitrary number. Therefore, we can say c2c4 = c6. Substitute this into the inequality and it gives us $c2 \vert g \vert \leqslant c6\vert h \vert$. Using the other segmented inequality of $\vert f \vert \leqslant c2\vert g \vert$, we have $\vert f \vert \leqslant c2\vert g \vert \leqslant c6\vert h \vert$. From this, we can transitively say $\vert f \vert \leqslant c6\vert h \vert$. \\
+\\
+When $n \geqslant n1$, $c1 \vert g \vert \leqslant \vert f \vert$ \\
+When $n \geqslant n2$, $c3 \vert h \vert \leqslant \vert g \vert$ \\
+\\
+When $n \geqslant n1$ and $n \geqslant n2$
+\end{solution}
+
+\goodbreak
+\checklist
+\end{document}

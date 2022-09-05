@@ -1,0 +1,209 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: #1}\hfill \textbf{UIN: #2}}
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to prepare this homework. \\[2ex]
+ \textbf{Electronic signature:} \underline{ \textbf{Blake Lun} } }
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$] 
+\item Did you type in your name and UIN? 
+\item Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted.)
+\item Did you sign that you followed the Aggie Honor Code? 
+\item Did you solve all problems? 
+\item Did you submit the .tex and .pdf files of your homework to the correct link on Canvas? 
+\end{compactitem}
+}
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw6.tex} and 
+    \textsl{yourLastName-yourFirstName-hw6.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing or unreadable, you will receive zero points for this
+    homework.}\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+
+\begin{document}
+\vspace*{-20mm}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2021\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{6}
+\duedate{Monday, 10/19/2021 11:59 p.m.}
+\name{ Blake Lun }{ 131001178 }
+\begin{resources} (All people, books, articles, web pages, etc.\ that
+  have been consulted when producing your answers to this homework)
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total 100 points.
+
+\bigskip
+
+\noindent
+The problems are from the lecture notes posted on Perusall.
+
+\medskip
+
+\noindent
+All five questions are proof-by-induction questions.  For each proof, strictly adhere 
+to the format and the style we discussed in class.  Especially in the inductive step, 
+carefully explain each step-by-step in your own words!  You will not receive full credit 
+if you don't explain the steps.
+
+Grading rubrics for each induction proof are as follows: 20\% for the induction base
+(clearly stating the base case and showing that the base case holds), 70\% for the
+inductive step (correctly stating the induction hypothesis, clearly stating where
+and how the induction hypothesis is used in the rest of the inductive step, clearly
+and completely showing the derivation steps in the inductive step), and 10\% for the 
+concluding remark of your proof. 
+
+\medskip
+
+\begin{problem} (20 points) Section 4.1, Exercise 4.3
+\end{problem}
+\begin{solution} 
+NOTE: For question 1 and 2, the proof by induction method they used in the textbook follows this format. Initially I was using algebraic methods to show that P(n) $\to$ P(n + 1) but realized that the textbook had a much simpler method. If the goal was to show that they are equal algebraically, it didn't say so in the instructions. But if that is the case I understand that I'll have to have points taken off. I just hope if it is indeed the case that not too many points are taken off. \\
+\\
+Let P(n) be $(n(n + 1)(2n + 1)) / 6 = (k = 1, n)\Sigma k^2$ \\
+Base Case: \\
+P(n) holds for n = 1 since \\
+$((1)((1) + 1)(2(1) + 1)) / 6 = (k = 1, 1)\Sigma k^2$ \\
+$\to ((2)(3)) / 6 = (k = 1, 1)\Sigma k^2$ \\
+$\to 1 = 1^2$ \\
+\\
+Induction Step: \\
+Induction Hypothesis: Assume P(n) is true. Show that P(n) implies P(n + 1) or $(n(n + 1)(2n + 1)) / 6 = (k = 1, n)\Sigma k^2$ implies \\
+$((n + 1)((n + 1) + 1)(2(n + 1) + 1)) / 6 = (k = 1, n + 1)\Sigma k^2$ holds for $n \geqslant 1$ \\
+\\
+P(n + 1) \\
+$((n + 1)((n + 1) + 1)(2(n + 1) + 1)) / 6 = (n(n + 1)(2n + 1)) / 6 + (n + 1)^2$\\
+$((n + 1)((n + 1) + 1)(2(n + 1) + 1)) / 6 = (k = 1, n)\Sigma k^2 + (n + 1)^2$\\
+Right hand side of equation: $(k = 1, n)\Sigma k^2 + (n + 1)^2$ = $(k = 1, n + 1)\Sigma k^2$. This is because $(k = 1, n + 1)\Sigma k^2$ is equal to $1^2 + 2^2 + ... + n^2 + (n+1)^2$. The $1^2 + 2^2 + ... + n^2$ portion is equal to $(k = 1, n)\Sigma k^2$. So if we substitute that back in, the equation becomes $(k = 1, n)\Sigma k^2 + (n + 1)^2$ which is why they are equal to each other.\\
+Therefore, $((n + 1)((n + 1) + 1)(2(n + 1) + 1)) / 6$ = $(k = 1, n + 1)\Sigma k^2$ which proves the implication. \\
+Therefore, we can conclude by induction that P(n) holds for all $n \geqslant 1$, which proves the claim.
+\end{solution}
+
+\begin{problem} (20 points) Section 4.1, Exercise 4.4
+\end{problem}
+\begin{solution} 
+Let P(n) be $(n^2(n + 1)^2) / 4 = (k = 1, n)\Sigma k^3$ \\
+Base Case: \\
+P(n) holds for n = 1 since: \\
+$(1^2(1 + 1)^2) / 4 = (k = 1, 1)\Sigma k^3$ \\
+$\to (2^2) / 4 = (k = 1, n)\Sigma k^3$ \\
+$\to 4 / 4 = 1 = 1^3$ \\
+\\
+Induction Step: \\
+Induction Hypothesis: Assume P(n) is true. Show that P(n) implies P(n + 1) or $(n^2(n + 1)^2) / 4 = (k = 1, n)\Sigma k^3$ implies $((n + 1)^2((n + 1) + 1)^2) / 4 = (k = 1, n + 1)\Sigma k^3$ holds for $n \geqslant 1$ \\
+\\
+P(n + 1) \\
+$((n + 1)^2((n + 1) + 1)^2) / 4 = (n^2(n + 1)^2) / 4 + (n + 1)^3$\\
+$((n + 1)^2((n + 1) + 1)^2) / 4 = (k = 1, n)\Sigma k^3 + (n + 1)^3$\\
+Right hand side of equation: $(k = 1, n)\Sigma k^3 + (n + 1)^3$ = $(k = 1, n + 1)\Sigma k^3$. This is because $(k = 1, n + 1)\Sigma k^3$ is equal to $1^3 + 2^3 + ... + n^3 + (n+1)^3$. The $1^3 + 2^3 + ... + n^3$ portion is equal to $(k = 1, n)\Sigma k^3$. So if we substitute that back in, the equation becomes $(k = 1, n)\Sigma k^3 + (n + 1)^3$ which is why they are equal to each other.\\
+Therefore, $((n + 1)^2((n + 1) + 1)^2) / 4 = (k = 1, n + 1)\Sigma k^3$ which proves the implication. \\
+Therefore, we can conclude by induction that P(n) holds for all $n \geqslant 1$, which proves the claim.
+\end{solution}
+
+\begin{problem} (20 points) Section 4.1, Exercise 4.6
+\end{problem}
+\begin{solution} 
+Let P(n) be $2^2^n - 1$ is divisible by 3 \\
+Base Case: \\
+P(n) holds for n = 1 since: \\
+$(2^2^(^1^) - 1) = 3$ (which is an integer divisible by 3) \\
+\\
+Induction Step: \\
+Induction Hypothesis: Assume P(n) is true. Show that P(n) implies P(n + 1) or $(2^2^n - 1)$ is divisible by 3 implies $(2^2^(^n^+^1^) - 1)$ is divisible by 3\\
+\\
+If we're assuming that P(n) is true, then: \\
+$(2^2^n - 1) = 3x$ where x is some integer (it's multiplied by 3 to show it's divisible by 3)\\
+$\to 2^2^n - 1= 3x$ \\
+$\to 2^2^n = 3x + 1$ \\
+\\
+P(n + 1) \\
+$(2^2^(^n^+^1^) - 1)$ \\
+= $2^2^n^+^2 - 1$ \\
+= $2^2^n * 2^2 - 1$ ; substitute $3x + 1$ for $2^2^n$\\
+= $(3x + 1) * 4 - 1$\\
+= $12x + 4 - 1$ \\
+= $12x + 3$ \\
+= $3(4x + 1)$ \\
+$(2^2^(^n^+^1^) - 1)$ = $3(4x + 1)$ \\
+The right side of the equation has a 3 outside of the parenthesis. This shows that $(2^2^(^n^+^1^) - 1)$ is divisible by 3 while under the assumption that x is an integer.
+Therefore, we can conclude by induction that P(n) holds for all $n \geqslant 1$, which proves the claim.
+\end{solution}
+
+\begin{problem} (20 points) Section 4.3, Exercise 4.15
+\end{problem}
+\begin{solution} 
+Let P(n) be $(k = 1, n)\Sigma f2k = f2 + f4 + ... + f2n = f(2n + 1) - 1$ \\
+Base Case: \\
+P(n) holds for n = 1 since: \\
+f2(1) = f(2(1) + 1) - 1 \\
+$\to f2 = f3 - 1 = 1$ \\
+\\
+Induction Step: \\
+Induction Hypothesis: Assume P(n) is true. Show that P(n) implies P(n + 1) or $(k = 1, n)\Sigma f2k = f2 + f4 + ... + f2n = f(2n + 1) - 1$ implies \\
+$(k = 1, n + 1)\Sigma f2k = f2 + f4 + ... + f2n + f2(n + 1)= f(2(n + 1) + 1) - 1$ \\
+\\
+P(n + 1) \\
+$(k = 1, n + 1)\Sigma f2k = (k = 1, n)\Sigma f2k + f2(n + 1)$. We are able to say this since $(k = 1, n)\Sigma f2k$ is equal to the $f2 + f4 + ... + f2n$ portion of $(k = 1, n + 1)\Sigma f2k$. We then substitute $f(2n + 1) - 1$ with $(k = 1, n)\Sigma f2k$ taken from our P(n). This gives us: \\
+$(k = 1, n + 1)\Sigma f2k = (f(2n + 1) - 1) + f(2n + 2)$. From here we are able to combine f(2n + 1) and f(2n + 2) into f(2n + 3. This is an identity that we can derive from these arbitrary numbers. Which would then give us: \\
+$(k = 1, n + 1)\Sigma f2k = f(2n + 3) - 1$. If we look back at our equation from earlier; $(k = 1, n + 1)\Sigma f2k = f2 + f4 + ... + f2n + f2(n + 1)= f(2(n + 1) + 1) - 1$, this can be simplified to $(k = 1, n + 1)\Sigma f2k = f(2n + 3) - 1$. If we look back at the equation we obtained just a second ago, we see that they match and are the same thing. \\
+Therefore, we can conclude by induction that P(n) holds for all $n \geqslant 1$, which proves the claim.
+\end{solution}
+
+\begin{problem} (20 points) Section 4.3, Exercise 4.17
+\end{problem}
+\begin{solution} 
+Let P(n) be $f(n + 1)f(n - 1) - (fn)^2 = (-1)^n$ \\
+Base Case: \\
+P(n) holds for n = 2 since: \\
+$f(2 + 1)f(2 - 1) - (f(2))^2 = (-1)^2$ \\
+$f(3)f(1) - (f2)^2 = 1$ \\
+$(2)(1) - (1)^2 = 1$ \\
+$1 = 1$ \\
+\\
+Induction Step: \\
+Let S(n) be $f(n + 1)f(n - 1) - (fn)^2$
+Induction Hypothesis: Assume S(n) is true. Show that S(n) implies S(n + 1) or $f(n + 1)f(n - 1) - (fn)^2$ implies \\
+$- f((n + 1) + 1)f((n + 1) - 1) + (f(n + 1))^2$ holds for $n \geqslant 2$. The signs are flipped since every number is the negative of the one before it.\\
+For this question we will use the Fibonacci identity f(n - 1) = f(n + 1) - f(n) for all $n \geqslant 2$ \\
+We are trying to show $f(n + 1)f(n - 1) - (fn)^2 \to f((n + 1) + 1)f((n + 1) - 1) - (f(n + 1)^2)$ \\
+First simplify this to $f(n + 1)f(n - 1) - (fn)^2 \to -f(n + 2)f(n) + (f(n + 1))^2$ \\
+Now looking at just the left hand side, let's get the two sides to match \\
+$f(n + 1)f(n - 1) - (fn)^2$; multiply by -1 \\
+$\to -f(n + 1)f(n - 1) + (fn)^2$; use the identity to substitute f(n - 1) \\
+$\to -f(n + 1)(f(n + 1) - f(n)) + (fn)^2$; distribute -f(n + 1) \\
+$\to -(f(n + 1)^2) + f(n + 1)(f(n) + (fn)^2$; factor out f(n) from $f(n + 1)(f(n)$ and $(fn)^2$ \\
+$\to f(n)(f(n + 1) + f(n)) - (f(n + 1)^2)$; f(n + 1) + f(n) is the same as f(n + 2) \\
+$\to f(n + 2)f(n) - (f(n + 1)^2)$ \\
+We have arrived at $f(n + 2)f(n) - (f(n + 1)^2)$ which is the same as our original equation $- f((n + 1) + 1)f((n + 1) - 1) + (f(n + 1))^2$.
+Therefore, we can conclude by induction that P(n) holds for all $n \geqslant 1$, which proves the claim.
+\end{solution}
+
+\goodbreak
+\checklist
+\end{document}

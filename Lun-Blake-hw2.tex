@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: #1}\hfill \textbf{UIN: #2}}
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to prepare this homework. \\[2ex]
+ \textbf{Electronic signature:} \underline{ \textbf{Blake Lun} } }
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$] 
+\item Did you type in your name and UIN? 
+\item Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted.)
+\item Did you sign that you followed the Aggie Honor Code? 
+\item Did you solve all problems? 
+\item Did you submit the .tex and .pdf files of your homework to the correct link on Canvas? 
+\end{compactitem}
+}
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw2.tex} and 
+    \textsl{yourLastName-yourFirstName-hw2.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing or unreadable, you will receive zero points for this
+    homework.}\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+
+\begin{document}
+\vspace*{-20mm}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2021\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{2}
+\duedate{Friday, 9/17/2021 11:59 p.m.}
+\name{ Blake Lun }{ 131001178 }
+\begin{resources} (All people, books, articles, web pages, etc.\ that
+  have been consulted when producing your answers to this homework)
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total 100 points.
+
+\bigskip
+
+\noindent
+\textbf{The problems are from the lecture notes posted on Perusall.}
+
+\medskip
+
+\begin{problem} (15 points) Section 2.3, Exercise 2.18 (b) 
+[Hint: First apply double negation.]
+\end{problem}
+\begin{solution} a\\
+$A \land (A\lor B) = \lnot\lnot(A \land (A\lor B))$ by double negation\\
+$A \land (A\lor B) = \lnot(\lnot A \lor \lnot(A\lor B))$ by de Morgan's law\\
+$A \land (A\lor B) = \lnot(\lnot A \lor (\lnot A\land \lnot B))$ by de Morgan's law\\
+$A \land (A\lor B) = \lnot((\lnot A \lor \lnot A) \land (\lnot A\lor \lnot B))$ by distributive law\\
+$A \land (A\lor B) = \lnot(\lnot A \lor \lnot A) \lor \lnot(\lnot A\lor \lnot B))$ by de Morgan's law\\
+$A \land (A\lor B) = (A \land A) \lor (A \land B))$ by de Morgan's law\\
+$A \land (A\lor B) = (A \lor (A \land B))$ since $A \land A$ is $A$\\
+$A \land (A\lor B) = (A \lor F) \land (A \lor B)$ by the identity law\\
+$A \land (A\lor B) = (A \lor (F \land B))$ by the distributive law\\
+$A \land (A\lor B) = (A \lor F)$ by the domination law\\
+$A \land (A\lor B) = (A)$ by the identity law\\
+
+\end{solution}
+
+\begin{problem} (15 points) Section 2.4, Exercise 2.20 (a)
+Do not use a truth table.  Use proof by contradiction like we did in class for modus ponens.
+\end{problem}
+\begin{solution} 
+Let's assume that there exists a valuation $v$ such that $v[A \to B] = T$, $v[\lnot B] = T$ and $v[\lnot A] = F$. However, $v[\lnot A] = F$ and $v[\lnot B] = T$ implies that $v[A \to B] = F$, which contradicts our assumption. Therefore, all valuations assigning true to the formulas in the set ${A \to B, \lnot B}$ must assign true to the formula $B$.
+\end{solution}
+
+\begin{problem} (20 points) Section 2.5, Exercise 2.25.
+[Hint: First apply the deduction theorem.]
+\end{problem}
+\begin{solution} 
+$\{ A \to (B \to C), B \} \vdash A \to C$\\
+1. $ \{ A \to (B \to C), B, A \} \vdash C$ by deduction theorem\\
+2. $A$                  premise\\
+3. $A \to (B \to C)$    premise\\
+4. $B \to C$            by R1 (2), (3)\\
+5. $B$                  premise\\
+6. $C$                  by R1 (5), (4)
+\end{solution}
+
+\begin{problem} (2 subproblems $\times$ 5 points each = 10 points) Section 2.6,
+Exercise 2.26 (b) and (e)
+\end{problem}
+\begin{solution} 
+b. For all numbers, there exists a number that is greater than its value.\\
+e. Both x and y are real numbers
+\end{solution}
+
+\begin{problem} (2 subproblems $\times$ 5 points each = 10 points) Section 2.6,
+Exercise 2.27 (a) and (c)
+\end{problem}
+\begin{solution} 
+a. Let I(x) denote the statement x is an integer. Let Rn(x) denote the statement x is a rational number. The universe is the set of integers.\\
+$\forall x(I(x) \land Rn(x))$\\
+c. Let $P(x,x^2)$ denote $x = x^2$. The universe is the set of integers. $\exists x \exists x^2P(x, x^2)$
+\end{solution}
+
+\begin{problem} (3 subproblems $\times$ 5 points each = 15 points) Section 2.6,
+Exercise 2.28 (b), (c), and (d)
+\end{problem}
+\begin{solution} 
+b. This is false. This statement says for every positive integer (a), there exists another positive integer (b) that can satisfy the formula $a = b + 2$. This can be disproven with setting $a = 1$ because that makes $b = -1$ which is not a positive integer.\\
+c.This is true. This is saying for every positive integer, there exists another positive integer less than or equal to it. This is true for all positive integers since you can also set the two variables equal to the same number such as $a = 1$ and $b = 1$.
+d. This is false. This statement says there exists an integer (a) for all integers(b) where a is less than b. This can be disproven when setting $b = 1$ since one is already the lowest possible positive integer meaning there is no plausible number that a can be set equal to.
+\end{solution}
+
+\begin{problem} (3 subproblems $\times$ 5 points each = 15 points) Section 2.8,
+Exercise 2.32
+\end{problem}
+\begin{solution} 
+a. If x is a real number, then $x \leqslant x^2$.
+b. \\
+c. if x is a real number, then it can be less than or equal to it's square or greater than its square.
+
+\end{solution}
+
+\goodbreak
+\checklist
+\end{document}
